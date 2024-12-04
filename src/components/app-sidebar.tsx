@@ -13,6 +13,8 @@ import {
   SidebarMenuItem,
 } from '@/components/ui/sidebar';
 
+import { APP_NAME } from '@/constant/env';
+
 const items = [
   {
     title: 'Dashboard',
@@ -38,8 +40,10 @@ export function AppSidebar() {
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton asChild>
-              <a href='/'>
-                <h1 className='text-2xl font-bold'>Codify.</h1>
+              <a href='/' className='py-8'>
+                <h1 className='text-2xl font-bold text-blue-500 text-center'>
+                  {APP_NAME}
+                </h1>
               </a>
             </SidebarMenuButton>
           </SidebarMenuItem>
