@@ -1,75 +1,19 @@
-import { Home, Settings, User } from 'lucide-react';
+import { SidebarLeft } from '@/components/sidebar-left';
+import { SidebarRight } from '@/components/sidebar-right';
+import { SidebarInset, SidebarProvider } from '@/components/ui/sidebar';
 
-import {
-  Sidebar,
-  SidebarContent,
-  SidebarFooter,
-  SidebarGroup,
-  SidebarGroupContent,
-  SidebarGroupLabel,
-  SidebarHeader,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-} from '@/components/ui/sidebar';
-
-import { APP_NAME } from '@/constant/env';
-
-const items = [
-  {
-    title: 'Dashboard',
-    icon: Home,
-    href: '/',
-  },
-  {
-    title: 'Profile',
-    icon: User,
-    href: '/profile',
-  },
-  {
-    title: 'Settings',
-    icon: Settings,
-    href: '/settings',
-  },
-];
-
-export function AppSidebar() {
+export function AppSidebar({ children }: { children: React.ReactNode }) {
   return (
-    <Sidebar>
-      <SidebarHeader>
-        <SidebarMenu>
-          <SidebarMenuItem>
-            <SidebarMenuButton asChild>
-              <a href='/' className='py-8'>
-                <h1 className='text-2xl font-bold text-blue-500 text-center'>
-                  {APP_NAME}
-                </h1>
-              </a>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-        </SidebarMenu>
-      </SidebarHeader>
-      <SidebarContent>
-        <SidebarGroup>
-          <SidebarGroupLabel>Navigation</SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              {items.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <a href={item.href}>
-                      <item.icon />
-                      {item.title}
-                    </a>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
-        <SidebarGroup />
-      </SidebarContent>
-      <SidebarFooter />
-    </Sidebar>
+    <SidebarProvider>
+      <SidebarLeft />
+      <SidebarInset>
+        {children}
+        <div className='flex flex-1 flex-col gap-4 p-4'>
+          <div className='mx-auto h-24 w-full max-w-3xl rounded-xl bg-muted/50' />
+          <div className='mx-auto h-[100vh] w-full max-w-3xl rounded-xl bg-muted/50' />
+        </div>
+      </SidebarInset>
+      <SidebarRight />
+    </SidebarProvider>
   );
 }
