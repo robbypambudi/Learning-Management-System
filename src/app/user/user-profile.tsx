@@ -19,7 +19,7 @@ const UserProfile: React.FC<UserProfileProps> = ({
   specialization,
 }) => {
   return (
-    <div className='flex items-center justify-between p-6 rounded-lg shadow-md w-full mx-auto'>
+    <div className='flex items-center justify-between p-6 rounded-lg shadow-md max-w-4xl mx-auto bg-white'>
       {/* Left Section */}
       <div className='flex items-center gap-4'>
         <img
