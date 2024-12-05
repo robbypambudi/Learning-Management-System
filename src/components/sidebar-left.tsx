@@ -37,35 +37,35 @@ const data = {
   navMain: [
     {
       title: 'Ask AI',
-      url: '#',
+      url: '/ask-ai',
       icon: Sparkles,
     },
     {
       title: 'Home',
-      url: '#',
+      url: '/',
       icon: Home,
       isActive: true,
     },
     {
       title: 'Inbox',
-      url: '#',
+      url: '/inbox',
       icon: Inbox,
       badge: '10',
     },
     {
       title: 'Courses',
-      url: '#',
+      url: '/courses',
       icon: Blocks,
       badge: 'New',
     },
     {
       title: 'Slides',
-      url: '#',
+      url: '/slides',
       icon: Paperclip,
     },
     {
       title: 'Remainders',
-      url: '#',
+      url: '/remainders',
       icon: Bell,
     },
   ],
