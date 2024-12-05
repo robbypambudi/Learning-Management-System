@@ -1,9 +1,11 @@
+'use client';
+
 /* eslint-disable @next/next/no-img-element */
 import React from 'react';
 
 const CourseDetails: React.FC = () => {
   return (
-    <div className='bg-blue-50 p-6 rounded-lg max-w-5xl mx-auto shadow-lg'>
+    <div className='bg-blue-50 p-6 rounded-lg mx-auto shadow-lg'>
       {/* Header */}
       <div className='flex justify-between items-center'>
         {/* Left Content */}
@@ -41,7 +43,7 @@ const CourseDetails: React.FC = () => {
         {/* Right Content (Image) */}
         <div className='ml-8'>
           <img
-            src='/path/to/course-image.png'
+            src='https://source.unsplash.com/400x300/?course'
             alt='Course'
             className='rounded-lg shadow-md'
           />
